@@ -437,6 +437,7 @@ credentials = {
     "universe_domain": "googleapis.com"
 }
 
+
 # Encode the credentials to JSON string
 credentials_json = json.dumps(credentials, indent=4)
 
