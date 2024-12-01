@@ -6,9 +6,10 @@ import vertexai
 from vertexai.generative_models import GenerativeModel, ChatSession
 from google.oauth2 import service_account
 from vertexai.language_models import TextGenerationModel
-from google.cloud import bigquery
+from google.cloud import bigquery 
 
-credentials_json = st.secrets["google_credentials"]
+credentials = st.secrets["google_credentials"]
+print(credentials)
 
 def response_from_llm(
     project_id,
@@ -422,9 +423,9 @@ def get_output(nls_query):
         return "An unexpected error occurred. Please try again later."
 
 
-
+credentials_dict = dict(credentials)
 # Encode the credentials to JSON string
-# credentials_json = json.dumps(credentials, indent=4)
+credentials_json = json.dumps(credentials_dict, indent=4)
 
 project_id = "pristine-dahlia-442517-m8"
 location = "us-central1"
