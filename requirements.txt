@@ -2,3 +2,4 @@ vertexai==1.71.1
 google-auth==2.27.0
 google-cloud-bigquery==3.25.0
 google-cloud-aiplatform
+streamlit
