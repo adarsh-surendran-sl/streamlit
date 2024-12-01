@@ -8,6 +8,7 @@ from google.oauth2 import service_account
 from vertexai.language_models import TextGenerationModel
 from google.cloud import bigquery
 
+credentials_json = st.secrets["google_credentials"]
 
 def response_from_llm(
     project_id,
@@ -422,23 +423,8 @@ def get_output(nls_query):
 
 
 
-# Your service account credentials (credentials JSON string)
-credentials = {
-  "type": "service_account",
-  "project_id": "pristine-dahlia-442517-m8",
-  "private_key_id": "e68172d78783989a185784135455747e50f75e52",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCrnFnxyZkfZuBf\nSoIuc/S27IJuSrfXwR+Y7FHtTP9QX8Vs+gmCWLNo8aW/cDJbwJpcYCVw5xS/qD5m\nHA/QPzcZAVd5/mgAD1dVK1VcR3heGJaXziPvz9MXbssGo6HD/uerX+OQwzZwnCk8\n18TLsjfM1WhQaPmqV9TrfBo2zQSeyb/YySO54Tb9Ox9jn9N5Xay/8ACk1U4fWuJa\nAzQNUQNsyUX0Q8N8T8iaw3R+WvVb4E95GRrTusfiATkYzboNv2HZyEx5VEYj253u\neAyge8ttGVZVUD6Be/zwpf3dPqM8fOTZnWGVeXNBswCLvhL3U3XrCHRpVkYGLuJD\n/G2/1EjDAgMBAAECggEAM/b7UXjvUg/v30sLko9wSbfiYw1jEAUd0Uu2HzpSkX7+\npFouaPb9FMkfnJGX3iq7Uz+V9tMyeDq08myK6U9LGtpKJ9m+mk4K7vJZPcEylKOz\nbjJwtVxkGlNlTRRdlqDoe/9kRGCoan8PCap4oAnOVctFdBvlhgxkoA4LTg7U2FPW\nC3xKG9wpfVVZikykShYLqVqPAv2Ophy1itadyIoc70q/8E6i2togZ7EMRwc6USzP\ng2Rq4XkSuunfJKVAoZPxZO9dIgDXdLY821zE7KYSvaH0LkiqXxSHyiHFCyGPCXBG\nA9Ax3YP9IB6o6hVnVUMkzJjxMrmLHGwAT7mbk7QtuQKBgQDd9BMf6NX3vQnO6TVy\njy8+U0WpJIthy3SH/Huiyu1ZMNPMlejOp1TfqP0nRg5r95xFAwot7xnO4vqg88Kr\nHBHbVMjY9mgU178X0uB9OelqUpyBK45jO67jwLkBkEM0cptB+xA2T3VmSohY/LSI\nwiStg7FEHDH8PIXLSPEtsanDZQKBgQDF71ywFLa1guaFniIa9jMn7xGC1oSLmFer\nuzhT57Dgy77+mUmxsbY6JvFFmFUwKEd9Osin2pSPbEfhXwYCy2IgHwA5blWoJomp\nyAfjslVYMYFPtbYIHcLLATvGvcWSvak+nA/wss2eDNQVFTSvVpMa6k3xKQZwl1/9\nMnaZk7+dBwKBgAmny4kw1NYRKDMTHBsetXxtnPMtvs6DTk94IVzEnSyrHhuhTd5n\nkx6juFeUCZ6Sx/6Mkk3LQAErCKIl2IsfDnvPJWmi1oZJmGuN5ewsr8XLUDmiTnBs\nsUABK0sxHmtSrQRiyqLCNCY+Cc5tN+FXKMdPmk+PNnF1pJBiXPOS7gKtAoGAbiir\nUywUC60QkujRXmQLUHxTKJgvKGne0SrfTIM0A8ghQh0Z0JVxL6ggu3TuZGDmeKHQ\nruqNp8zBrIJwG/oJYIsgWtY3QeBA2YcELQtBSFY0+6HL73Rwxv6mwBM59FMt8DR3\nAqTgnsfQ+PLWYYczU9V3D3KfrOXyfD4rl4mNKN0CgYAraDM4cmpVgDxF4q/mBm78\n/fOAB4IcXV0E/GLWTKMBUbM1okiZl9K43MqVSvArFLLJx/0qzHn4+S0d91azM6D2\nO51cvnJWQJ+aUL8tCdxVBD1RgBKwF/nJyG9gZ/W5tQ+y3yzyEf60KzXfnS7I2G0g\nuqLUzvhKOqIoaI3G6NjW0g==\n-----END PRIVATE KEY-----\n",
-  "client_email": "adarsh@pristine-dahlia-442517-m8.iam.gserviceaccount.com",
-  "client_id": "108910322993158451625",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adarsh%40pristine-dahlia-442517-m8.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
-
 # Encode the credentials to JSON string
-credentials_json = json.dumps(credentials, indent=4)
+# credentials_json = json.dumps(credentials, indent=4)
 
 project_id = "pristine-dahlia-442517-m8"
 location = "us-central1"
