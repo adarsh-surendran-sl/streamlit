@@ -422,9 +422,23 @@ def get_output(nls_query):
 
 
 
+# Your service account credentials (credentials JSON string)
+credentials = {
+    "type": "service_account",
+    "project_id": "pristine-dahlia-442517-m8",
+    "private_key_id": "16de14b99226b91c67abf09be93eb4e2b5deb211",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCICYaxzTFMJLsa\nNhd2nMO0XdOM7MiSQ+ZsIwd0B8xm5steDFoFKfcVkJn2ROq56/lbR2ObWmS40IzN\nItFZRvvsUON2vKxAH2LVGeWk/tAHwUa9DTwkRxurHsM51rVp11vmvd5StEJQ9Knr\nZxPnVQfdCNeXplkjP8E/Jv8HiO9EbuN/Cqf3uC1irMNkMm1tR3QT6bMJBQfhl975\nXl6xDEPPgzI/UV4Dlxnr70+6j0mqY/Kf2FVRquHVDLfvP7R0VAPCv5gjvxFrZ2Qb\nMHj9uceWHzrAdpOPB8r+NWU47Yp7HgKQOZrtvu6VnP4OafzBgG05E3xgFIFcm41Y\nP7eW/HbDAgMBAAECggEADNw1rw5SWDvqsi4l5rEoMR9jleF2jpk7qcJf/ICWOq4b\n0J7DTdSrRo8edvEJ7ZyYvJ/Rk0im1+/jN6tQdiunOi5lan6onAE7kyC5HHF4Uhtb\n6BhdtKJCQ9mLJCcfjEtvJS+S2mevEz8l5xqd/5MCxMsGso/nwlTPHHy/xEMWN3ZO\n4lYNL4qh+oXDF5TFs6q51gHN9t9fIaXTreeVLNEPGASfDg6ecYAFdUQ96PRDlrKZ\nms7zrcrRBYIUv5WU1lD/akAXF+51h8oW34ywBGgCbBA+PDJv92p57e9iyk6kaGVo\naiCLDawiSUABuloY5X2E+sQqCgzypqvA/8GFEb8CbQKBgQC96E+hxtWK/BFj3sH1\nQtoq7TKNuFuzFS5ERGUMvE+XJC0xalDRxqjrjBW5vmlwgkri4XV92NoWHhHo70C6\nwdnYQ/Dx8F5qCl+7zUQNNgZP0Ow86ixcU7fHtTOAU1N+Z8KvbiiqbyHPzzgPwzVJ\n9CyIjrM6FPj58Xgf723d+eh0bwKBgQC3Ya2NiCQAlYQleQHtBaehQdYd1CuNUulv\nlGHLliUoFwH+/GTVChudVAYpx5TKolYUQFtXsw6JN4sr0blqduu6rj4jTAsp5k26\n30PksznJX/pur3ESHIgCHHjDa2EJcz+GJDy7Q96C5h28ofHFGnSewqqaLD3mLoaB\np++LwVAU7QKBgGmbb/U6GnSQ2qbcMKZQh/yJLazMEgqTw8fo9PzRF72oO42YXttZ\ni4R5wXcqoX4UpspmsKzMU/Mqw7Dyo993f8qZdbtFfWug2z4X1zk1iusF9umlHAg3\n8iKX7Mz3CZ5o20Ytj2XAKWBkDvwNBWxb4gwKtzachRyRoMi5oDJqEE/3AoGAUb9i\nXahl3DjKuuWxnRabPoCZ0ZxGee6PD2WHHvlkwPVYt3GOBYZG/yB4yuEkjBxH4Sk7\nTuIMRdET4knQrQwsU4DfRF7ezyPSXM6wdmALD6EQg40EC73aR46nqv3QOSU+GS9I\nP3am15V7hh5vJ51+hVNkN+wm/9iXr27Mk3FuoJUCgYA21hfFacrgPJNEwtxIA5mU\n9dag0+3ctEdDvfLTYPmNVc4l/zjHQiO4PHwnU80Ny65uI1Ul4044lwaS4rtFzji4\nXpW/gsH0M0j47rlq8AsFGtepKFtdj56IN9sAzGBu+8G8seX5nejmSk0C48l/MyoN\nv49zrVhWMRFLNVXcsqpasw==\n-----END PRIVATE KEY-----\n",
+    "client_email": "adarsh@pristine-dahlia-442517-m8.iam.gserviceaccount.com",
+    "client_id": "108910322993158451625",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adarsh%40pristine-dahlia-442517-m8.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+}
 
-
-
+# Encode the credentials to JSON string
+credentials_json = json.dumps(credentials, indent=4)
 
 project_id = "pristine-dahlia-442517-m8"
 location = "us-central1"
